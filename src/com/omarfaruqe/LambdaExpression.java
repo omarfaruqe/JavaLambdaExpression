@@ -1,7 +1,7 @@
 package com.omarfaruqe;
 @FunctionalInterface
 interface Cab{
-    void bookCab(String source, String destination);
+    double bookCab(String source, String destination);
 }
 
 //class UberX implements Cab {
@@ -24,8 +24,11 @@ public class LambdaExpression {
 //        };
 //        cabWithAnonymous.bookCab();
 
-        Cab cabWithLambda = (source, destination) ->
+        Cab cabWithLambda = (source, destination) -> {
             System.out.println("UberX Booked from " + source + " To " + destination + ", Arriving Soon!!");
-        cabWithLambda.bookCab("Dhaka", "Rajshahi");
+            return 320.56;
+        };
+        double fare = cabWithLambda.bookCab("Dhaka", "Rajshahi");
+        System.out.println("And the approximate fare is: " + fare);
     }
 }
