@@ -10,6 +10,9 @@ class Calc{
     public static void addSomething(int num1, int num2) {
         System.out.println(num1 + " and " + num2 + " addition is " + (num1 + num2));
     }
+    public void letsAdd(int num1, int num2){
+        System.out.println(num1 + " and " + num2 + " adds to " + (num1 + num2));
+    }
 }
 public class LambdaExpression {
     public int instanceVar = 10;
@@ -37,5 +40,10 @@ public class LambdaExpression {
         // 1. Reference to a Static Method
         Calculator cRef = Calc::addSomething;
         cRef.add(11, 14);
+
+        // 2. Reference to a not static or instance method
+        Calc calc = new Calc();
+        Calculator cNonRef = calc::letsAdd;
+        cNonRef.add(20,25);
     }
 }
