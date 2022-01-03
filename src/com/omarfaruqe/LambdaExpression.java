@@ -23,5 +23,10 @@ public class LambdaExpression {
             }
         };
         cabWithAnonymous.bookCab();
+
+        Cab cabWithLambda = () -> {
+            System.out.println("UberX Booked !! Arriving Soon!!");
+        };
+        cabWithLambda.bookCab();
     }
 }
