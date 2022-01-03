@@ -14,6 +14,15 @@ class Calc{
         System.out.println(num1 + " and " + num2 + " adds to " + (num1 + num2));
     }
 }
+
+interface Messenger{
+    void getMessage(String msg);
+}
+class Message{
+    Message(String msg){
+        System.out.println(" >> Message is " + msg);
+    }
+}
 public class LambdaExpression {
     public int instanceVar = 10;
     public static int staticVar = 100;
@@ -45,5 +54,9 @@ public class LambdaExpression {
         Calc calc = new Calc();
         Calculator cNonRef = calc::letsAdd;
         cNonRef.add(20,25);
+
+        //3. Reference to a Constructor
+        Messenger mReg = Message::new;
+        mReg.getMessage("Reference to a Constructor");
     }
 }
