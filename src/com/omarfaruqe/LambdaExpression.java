@@ -4,31 +4,19 @@ interface Cab{
     double bookCab(String source, String destination);
 }
 
-//class UberX implements Cab {
-//    @Override
-//    public void bookCab() {
-//        System.out.println("UberX Booked !! Arriving Soon!!");
-//    }
-//}
-
 public class LambdaExpression {
-    public static void main(String[] args) {
-//        Cab cab = new UberX();
-//        cab.bookCab();
-//
-//        Cab cabWithAnonymous = new Cab(){
-//            @Override
-//            public void bookCab() {
-//                System.out.println("UberX Booked !! Arriving Soon!!");
-//            }
-//        };
-//        cabWithAnonymous.bookCab();
+    public int instanceVar = 10;
+    public static int staticVar = 100;
 
-        Cab cabWithLambda = (source, destination) -> {
-            System.out.println("UberX Booked from " + source + " To " + destination + ", Arriving Soon!!");
-            return 320.56;
-        };
-        double fare = cabWithLambda.bookCab("Dhaka", "Rajshahi");
-        System.out.println("And the approximate fare is: " + fare);
+    Cab cabWithLambda = (source, destination) -> {
+        int localVar = 200;
+        System.out.println("UberX Booked from " + source + " To " + destination + ", Arriving Soon!!");
+        System.out.println("Local variable localVar: " + localVar);
+        System.out.println("Instance variable instanceVar: " + instanceVar);
+        System.out.println("Static variable staticVar: " + LambdaExpression.staticVar);
+        return 320.56;
+    };
+
+    public static void main(String[] args) {
     }
 }
