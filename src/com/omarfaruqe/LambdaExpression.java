@@ -3,7 +3,14 @@ package com.omarfaruqe;
 interface Cab{
     double bookCab(String source, String destination);
 }
-
+interface Calculator{
+    void add(int num1, int num2);
+}
+class Calc{
+    public static void addSomething(int num1, int num2) {
+        System.out.println(num1 + " and " + num2 + " addition is " + (num1 + num2));
+    }
+}
 public class LambdaExpression {
     public int instanceVar = 10;
     public static int staticVar = 100;
@@ -22,6 +29,13 @@ public class LambdaExpression {
     };
 
     public static void main(String[] args) {
-        new LambdaExpression();
+        //new LambdaExpression();
+
+        //Normal Calling
+        Calc.addSomething(10, 20);
+
+        // 1. Reference to a Static Method
+        Calculator cRef = Calc::addSomething;
+        cRef.add(11, 14);
     }
 }
