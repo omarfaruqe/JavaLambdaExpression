@@ -31,6 +31,12 @@ public class LambdaExpression {
         System.out.println("Fare is " + fare);
     }
 
+    /**
+     * It can't be accessed from a static method.
+     * If we declare this variable as a local variable, inside a static method,
+     * then it will be accessible from that static method. But int that case,
+     * we'll not be able to use instance-variable.
+     */
     Cab cabWithLambda = (source, destination) -> {
         int localVar = 200;
         System.out.println("UberX Booked from " + source + " To " + destination + ", Arriving Soon!!");
